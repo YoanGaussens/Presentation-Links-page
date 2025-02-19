@@ -1,0 +1,39 @@
+body {
+  font-family: 'Orbitron';
+  color: #fafafa;
+  background-color: #1e1e1e;
+  
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 1rem 1rem 1rem;
+}
+
+header #picture {
+  width: 15rem;
+}
+
+header h1 {
+  margin: 2rem 1rem 0rem 1rem;
+}
+
+header h3 {
+  margin: .5rem 1rem 0rem 1rem;
+  font-size: 1.3rem;
+}
+
+header #logo {
+  width: 10rem;
+  margin: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,51 @@
+/* 1️⃣ Box-sizing : facilite le dimensionnement */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* 2️⃣ Suppression des décorations de liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* 3️⃣ Suppression des styles de liste */
+ul, ol {
+  list-style: none;
+}
+/* 4️⃣ Assurer une hauteur minimale pour le body */
+html, body {
+  height: 100%;
+}
+/* 5️⃣ Polices et anti-aliasing */
+body {
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* 6️⃣ Empêcher l'effet de flash sur les boutons */
+button, input, textarea {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+/* 7️⃣ Ajustements images et médias */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* 8️⃣ Accessibilité et focus visibles seulement avec clavier */
+:focus {
+  outline: 2px solid blue;
+  outline-offset: 2px;
+}
+/* 9️⃣ Suppression des animations pour utilisateurs réduisant les mouvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
