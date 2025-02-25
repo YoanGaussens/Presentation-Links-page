@@ -1,8 +1,7 @@
 body {
-  font-family: 'Orbitron';
+  font-family: "Orbitron";
   color: #fafafa;
   background-color: #1e1e1e;
-  
 }
 
 header {
@@ -22,7 +21,7 @@ header h1 {
 }
 
 header h3 {
-  margin: .5rem 1rem 0rem 1rem;
+  margin: 0.5rem 1rem 0rem 1rem;
   font-size: 1.3rem;
 }
 
@@ -36,4 +35,47 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.links img {
+  width: 4rem;
+}
+
+.contact {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.contact img {
+  width: 5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+svg {
+  width: 3rem;
 }
