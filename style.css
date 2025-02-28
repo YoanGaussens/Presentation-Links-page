@@ -35,16 +35,17 @@ header h3 {
   font-size: 1.3rem;
 }
 
-@keyframes neonGlow {
-  0% { text-shadow: 0 0 1px #00a2ff, 0 0 5px #0084ff, 0 0 10px #0077ff, 0 0 15px #00f; }
-  50% { text-shadow: 0 0 5px #00a2ff, 0 0 10px #0084ff, 0 0 15px #0077ff, 0 0 20px #00f; }
-  100% { text-shadow: 0 0 1px #00a2ff, 0 0 5px #0084ff, 0 0 10px #0077ff, 0 0 15px #00f; }
-}
+/* @keyframes neonGlow {
+  0% { text-shadow: 0 0 1px #37AEE3, 0 0 5px #0084ff, 0 0 10px #0077ff, 0 0 15px #00f; }
+  50% { text-shadow: 0 0 5px #37AEE3, 0 0 10px #0084ff, 0 0 15px #0077ff, 0 0 20px #00f; }
+  100% { text-shadow: 0 0 1px #37AEE3, 0 0 5px #0084ff, 0 0 10px #0077ff, 0 0 15px #00f; }
+} */
 
 header .slogan .neon{
-  font-weight: normal;
-  /* color: rgb(255, 255, 255); */
-  text-shadow: 0 0 5px #00a2ff, 0 0 10px #0084ff, 0 0 15px #0077ff, 0 0 20px #00f;
+  font-weight: 100;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 5px #37AEE3, 0 0 10px #285ec3, 0 0 15px #2570ad, 0 0 20px #0182d2;
+  /* text-shadow: 0 0 10px #3784e3;; */
   /* animation: neonGlow 1.5s infinite alternate; */
 }
 
