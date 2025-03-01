@@ -11,52 +11,70 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin: 4rem 1rem 1rem 1rem; */
 }
 
-header #picture {
+header .infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header .picture {
   width: 13rem;
   border-radius: 50%;
   margin-top: 3rem;
 }
 
 header h1 {
-  /* margin: 2rem 1rem 0rem 1rem; */
-  margin: 2rem 0 1rem 0;
+  margin: 2rem 0 0 0;
 }
 
-header #logo {
+header .logo {
   width: 5rem;
   margin: 1rem;
+  text-align: center;
+}
+
+header .logo-desktop {
+  display: none;
 }
 
 header h3 {
-  margin: 1rem 0 1rem 0;
+  margin: 0;
   font-size: 1.3rem;
 }
 
-/* @keyframes neonGlow {
-  0% { text-shadow: 0 0 1px #37AEE3, 0 0 5px #0084ff, 0 0 10px #0077ff, 0 0 15px #00f; }
-  50% { text-shadow: 0 0 5px #37AEE3, 0 0 10px #0084ff, 0 0 15px #0077ff, 0 0 20px #00f; }
-  100% { text-shadow: 0 0 1px #37AEE3, 0 0 5px #0084ff, 0 0 10px #0077ff, 0 0 15px #00f; }
-} */
+@keyframes neonGlow {
+  0% {
+    text-shadow: 0 0 1px #37aee3, 0 0 5px #285ec3, 0 0 10px #2570ad,
+      0 0 15px #0182d2;
+  }
+  50% {
+    text-shadow: 0 0 5px #37aee3, 0 0 10px #285ec3, 0 0 15px #2570ad,
+      0 0 20px #0182d2;
+  }
+  100% {
+    text-shadow: 0 0 1px #37aee3, 0 0 5px #285ec3, 0 0 10px #2570ad,
+      0 0 15px #0182d2;
+  }
+}
 
-header .slogan .neon{
+header .slogan .neon {
   font-weight: 100;
   color: rgb(255, 255, 255);
-  text-shadow: 0 0 5px #37AEE3, 0 0 10px #285ec3, 0 0 15px #2570ad, 0 0 20px #0182d2;
-  /* text-shadow: 0 0 10px #3784e3;; */
-  /* animation: neonGlow 1.5s infinite alternate; */
+  text-shadow: 0 0 5px #37aee3, 0 0 10px #285ec3, 0 0 15px #2570ad,
+    0 0 20px #0182d2;
+  animation: neonGlow 1.5s infinite alternate;
 }
 
 header .presentation p {
-  margin: .5rem 0 0 0;
+  margin: 1rem 0 1rem 0;
 }
 
 header .presentation strong {
   font-weight: normal;
 }
-
 
 main {
   display: flex;
@@ -68,14 +86,12 @@ main {
 .links {
   display: flex;
   flex-direction: column;
-  /* gap: 1rem; */
   justify-content: center;
   align-items: center;
-  margin: 2.5rem 0 0 0;
+  margin: 5rem 0 0 0;
 }
 
-.links-title{
-  margin-bottom: .5rem;
+.links-title {
   padding: 0;
   font-weight: normal;
 }
@@ -97,36 +113,58 @@ main {
   width: 3.8rem;
 }
 
+.github-icon {
+  fill: #fafafa;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
-  /* gap: 1rem; */
   justify-content: center;
   align-items: center;
-  margin: 4rem 0 0 0;
+  margin: 2rem 0 0 0;
 }
 
 .contact-icons {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
   margin: 1rem;
 }
 
 .contact-icons img {
-  width: 5.2rem;
+  width: 4rem;
 }
 
-
-/*? test */
-#contact-link {
-  font-size: 24px;
-  text-decoration: none;
-  cursor: pointer;
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
 }
-/*? test */
 
+.modal-content {
+  background: rgb(96, 153, 155);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 300px;
+}
+
+.modal p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 
 .studies {
   display: flex;
@@ -137,22 +175,22 @@ main {
   margin: 4rem 0 0 0;
 }
 
-.studies h3{
+.studies h3 {
   /* font-weight: normal; */
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .studies h4 {
   font-weight: normal;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .degree h4 {
-  margin: 0; 
+  margin: 0;
 }
 
 .degree .equivalence {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .tools {
@@ -163,24 +201,30 @@ main {
   margin: 4rem 0 0 0;
 }
 
-.tools-title{
+.tools-title {
   font-weight: normal;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 ul {
   list-style-type: none;
   margin: 0rem 1rem 1rem 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
 }
 
-li {
+.tools-logos {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.tools-logos div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .logo-js {
@@ -191,7 +235,163 @@ svg {
   width: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  body {
+    margin: 2rem;
+  }
 
+  header {
+    margin: 4rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
 
+  header .desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
+  header .infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+  }
 
+  header .picture {
+    width: 15rem;
+  }
+
+  header h1 {
+    margin: 2rem 1rem 0rem 1rem;
+  }
+
+  header .logo {
+    width: 6rem;
+  }
+
+  header .logo-mobile {
+    display: none;
+  }
+
+  header .logo-desktop {
+    display: block;
+    width: 6rem;
+  }
+
+  header h3 {
+    font-size: 1.5rem;
+  }
+
+  header .presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  header .presentation p {
+    margin: 1rem 0 1rem 0;
+  }
+
+  main {
+    margin: 2rem 1rem 1rem 1rem;
+  }
+
+  .links {
+    margin: 5rem 0 0 0;
+  }
+
+  .links-icons {
+    margin: 1rem;
+  }
+
+  .links-icons img {
+    width: 5rem;
+  }
+
+  .links-icons svg {
+    width: 4rem;
+  }
+
+  .contact {
+    margin: 2rem 0 0 0;
+  }
+
+  .contact-icons {
+    margin: 1rem;
+  }
+
+  .contact-icons img {
+    width: 5rem;
+  }
+
+  .studies {
+    margin: 4rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  .studies h3 {
+    font-size: 1.5rem;
+  }
+
+  .studies h4 {
+    font-size: 1.2rem;
+  }
+
+  .forming {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  .degree {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  .degree h4 {
+    font-size: 1.2rem;
+  }
+
+  .degree .equivalence {
+    font-size: 1rem;
+  }
+
+  .tools {
+    margin: 4rem 0 0 0;
+  }
+
+  .tools-title {
+    font-size: 1.5rem;
+  }
+
+  .tools-logos {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .tools-logos div {
+    gap: 1rem;
+  }
+
+  .logo-js {
+    border-radius: 2px;
+  }
+
+  svg {
+    width: 3rem;
+  }
+}

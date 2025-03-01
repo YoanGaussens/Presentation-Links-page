@@ -1,32 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const contactLink = document.getElementById("contact-link");
-    const phoneNumber = document.getElementById("phone-number").textContent;
+    let phoneLink = document.querySelector(".phone-link");
+    let modal = document.getElementById("phone-modal");
+    let closeBtn = document.querySelector(".close");
 
-    function isMobile() {
-        return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    }
+    phoneLink.addEventListener("click", function (event) {
+        if (window.innerWidth >= 768) { // Seulement sur desktop
+            event.preventDefault(); // Empêche l'ouverture de l'app téléphone
+            modal.style.display = "flex";
+        }
+    });
 
-    if (isMobile()) {
-        contactLink.setAttribute("href", `tel:${phoneNumber}`); // Par défaut, appel
-        contactLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            const choice = confirm("Voulez-vous appeler ou envoyer un message ?");
-            if (choice) {
-                window.location.href = `tel:${phoneNumber}`;
-            } else {
-                const smsChoice = confirm("Envoyer un SMS ou ouvrir WhatsApp ?");
-                if (smsChoice) {
-                    window.location.href = `sms:${phoneNumber}`;
-                } else {
-                    window.location.href = `https://wa.me/${phoneNumber.replace(/\s/g, '')}`;
-                }
-            }
-        });
-    } else {
-        contactLink.removeAttribute("href"); // Pas de lien sur PC
-        contactLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            alert(`Numéro : ${phoneNumber}`);
-        });
-    }
+    // Fermer la modale en cliquant en dehors
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 });
