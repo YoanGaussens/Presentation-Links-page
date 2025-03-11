@@ -6,6 +6,10 @@ body {
   margin: 1rem;
 }
 
+.left, .right {
+  display: none;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -20,8 +24,8 @@ header .infos {
   align-items: center;
 }
 
-header .picture {
-  width: 13rem;
+header .picture-mobile {
+  width: 15rem;
   border-radius: 50%;
   margin-top: 3rem;
 }
@@ -62,7 +66,7 @@ header h3 {
 
 header .slogan .neon {
   font-weight: 100;
-  color: rgb(255, 255, 255);
+  color: #90e4fc;
   text-shadow: 0 0 5px #37aee3, 0 0 10px #285ec3, 0 0 15px #2570ad,
     0 0 20px #0182d2;
   animation: neonGlow 1.5s infinite alternate;
@@ -81,6 +85,15 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.prestations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 5rem 0 0 0;
 }
 
 .links {
@@ -176,7 +189,6 @@ main {
 }
 
 .studies h3 {
-  /* font-weight: normal; */
   margin-bottom: 0.5rem;
 }
 
@@ -213,7 +225,7 @@ ul {
 
 .tools-logos {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -224,7 +236,8 @@ ul {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: .5rem;
+  margin: .25rem;
 }
 
 .logo-js {
@@ -235,13 +248,53 @@ svg {
   width: 2rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1063px) {
   body {
+    display: flex;
     margin: 2rem;
+    width: 100vw;
+    align-items: flex-start;
+  }
+
+  .left, .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 33%;
+    margin-top: 5rem;
+    position: fixed;
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
+  }
+
+  .picture {
+    width: 15rem;
+  }
+
+  .logo {
+    width: 6rem;
+    margin-top: calc(
+      (15rem - 6rem) / 2
+    ); /* permet de centrer le logo par rapport à la photo de profil */
+  }
+
+  .center {
+    width: 34%;
+    margin: 0;
+    margin-left: 33%; /* Décale `.center` à droite de `.left` */
+    margin-right: 33%; /* Décale `.center` pour ne pas passer sous `.right` */
+    overflow-y: auto;
   }
 
   header {
-    margin: 4rem 1rem 1rem 1rem;
+    margin: 0rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -261,22 +314,13 @@ svg {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40rem;
-  }
-
-  header .picture {
-    width: 15rem;
   }
 
   header h1 {
     margin: 2rem 1rem 0rem 1rem;
   }
 
-  header .logo {
-    width: 6rem;
-  }
-
-  header .logo-mobile {
+  header .logo-mobile, .picture-mobile {
     display: none;
   }
 
@@ -379,12 +423,13 @@ svg {
   }
 
   .tools-logos {
+    display: flex;
     flex-direction: row;
-    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .tools-logos div {
-    gap: 1rem;
+    margin: .25rem;
   }
 
   .logo-js {
